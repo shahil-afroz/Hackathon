@@ -1,12 +1,12 @@
 'use client'
 import {useEffect}from 'react';
-
+import pic from "../../../../../public/sign-in.webp"
 import Footer from '@/app/dashboard/_components/Footer'
 
 import Link from 'next/link';
 import { useUser } from "@clerk/nextjs";
 import Error from 'next/error';
-
+import Image from 'next/image'
 
 
 const Home = () => {
