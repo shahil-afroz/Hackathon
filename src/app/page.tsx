@@ -1,7 +1,7 @@
 'use client'
 import {useEffect}from 'react';
 
-
+import Footer from '@/app/dashboard/_components/Footer'
 
 import Link from 'next/link';
 import { useUser } from "@clerk/nextjs";
@@ -241,7 +241,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-   
+      <Footer/>
     </div>
   );
 };
