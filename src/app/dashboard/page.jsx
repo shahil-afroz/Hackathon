@@ -1,9 +1,9 @@
 "use client"
 import Link from "next/link"
 import { useState } from "react"
-// import AddMockInterview from './_components/AddMockInterview'
+import AddMockInterview from './_components/AddMockInterview'
 import Footer from './_components/Footer'
-// import AllInterviews from './_components/allInterviews'
+import AllInterviews from './_components/allInterviews'
 function page() {
   const[state , setState] = useState(false)
   return (
