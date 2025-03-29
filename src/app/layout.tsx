@@ -1,8 +1,8 @@
-
+import { Toaster } from "@/components/ui/sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-
+import Navbar from "./dashboard/_components/navbar";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -33,9 +33,9 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          
+            <Navbar />
           {children}
-          
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
