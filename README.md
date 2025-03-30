@@ -1,6 +1,6 @@
 # ExcelInterview.AI - AI-Powered Interview Preparation Platform
 
-![ExcelInterview.AI Logo](https://github.com/user-attachments/assets/df964484-d50b-40e3-bcb5-b533a3c9d8b0)
+![ExcelInterview.AI Logo](https://github.com/user-attachments/assets/bdaf1b81-914b-4f60-b3f2-d683455732de)
 
 ## 🚀 Introduction
 
