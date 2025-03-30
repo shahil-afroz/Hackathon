@@ -25,7 +25,7 @@ function page() {
           }}
         >
           <div className='absolute inset-0 bg-black bg-opacity-60'></div>
-          <div className='relative z-10 p-10'>
+          <div className='relative z-10 p-10 flex flex-col h-full'>
             <div className='text-center mb-10 mt-10'>
               <h2 className='font-bold text-4xl mb-4'>Dashboard</h2>
               <h1 className='text-gray-400 text-xl'>Create and Start your AI Mock Interview</h1>
@@ -36,17 +36,17 @@ function page() {
             </div>
             
             {/* Add Mock Interview Component */}
-            <div className='max-w-md mx-auto'>
+            <div className='max-w-md mx-auto w-full'>
               <AddMockInterview />
-            </div>
-            
-            <div className='py-10 flex justify-center'>
-              <button 
-                onClick={() => setShowInterviews(true)}
-                className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transform transition duration-300 hover:scale-105 shadow-lg'
-              >
-                View All Interviews
-              </button>
+              
+              <div className='mt-4 flex justify-center'>
+                <button 
+                  onClick={() => setShowInterviews(true)}
+                  className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transform transition duration-300 hover:scale-105 shadow-lg'
+                >
+                  View All Interviews
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -64,16 +64,21 @@ function page() {
           <div className='absolute inset-0 bg-black bg-opacity-50'></div>
           
           {/* Battle Royale Content */}
-          <div className='relative z-10 p-10 flex flex-col items-center justify-center h-full'>
-            <h2 className='font-bold text-4xl mb-4 text-white'>Battle Royale</h2>
-            <p className='text-gray-200 text-xl mb-8 text-center max-w-md'>
-              Challenge your friends to interview battles and see who performs better!
-            </p>
-            <Link href="/interview-groups/create">
-              <button className='bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transform transition duration-300 hover:scale-105 shadow-lg'>
-                Start Battle
-              </button>
-            </Link>
+          <div className='relative z-10 p-10 flex flex-col h-full'>
+            <div className='text-center mb-10 mt-10'>
+              <h2 className='font-bold text-4xl mb-4 text-white'>Battle Royale</h2>
+              <p className='text-gray-200 text-xl mb-8 text-center max-w-xl mx-auto'>
+                Challenge your friends to interview battles and see who performs better!
+              </p>
+              
+              <div className='flex justify-center'>
+                <Link href="/interview-groups/create">
+                  <button className='bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transform transition duration-300 hover:scale-105 shadow-lg'>
+                    Start Battle
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
