@@ -4,11 +4,13 @@ import { useState } from "react"
 import AddMockInterview from './_components/AddMockInterview'
 import Footer from './_components/Footer'
 import AllInterviews from './_components/allInterviews'
+
 function page() {
-  const[state , setState] = useState(false)
+  const [state, setState] = useState(false)
+  const [showInterviews, setShowInterviews] = useState(false)
+  
   return (
     <div className='min-h-screen flex flex-col relative'>
-
       <div className='flex flex-col md:flex-row flex-1'>
         {/* Dashboard Side */}
         <div
@@ -32,18 +34,23 @@ function page() {
                 Practice responding to common interview questions and receive instant feedback.
               </p>
             </div>
-
+            
             {/* Add Mock Interview Component */}
             <div className='max-w-md mx-auto'>
               <AddMockInterview />
             </div>
-
-            <div className='py-10'>
-              <AllInterviews/>
+            
+            <div className='py-10 flex justify-center'>
+              <button 
+                onClick={() => setShowInterviews(true)}
+                className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transform transition duration-300 hover:scale-105 shadow-lg'
+              >
+                View All Interviews
+              </button>
             </div>
           </div>
         </div>
-
+        
         {/* Battle Royale Side */}
         <div
           className='w-full md:w-1/2 min-h-screen relative'
@@ -54,9 +61,8 @@ function page() {
             backgroundRepeat: "no-repeat"
           }}
         >
-
           <div className='absolute inset-0 bg-black bg-opacity-50'></div>
-
+          
           {/* Battle Royale Content */}
           <div className='relative z-10 p-10 flex flex-col items-center justify-center h-full'>
             <h2 className='font-bold text-4xl mb-4 text-white'>Battle Royale</h2>
@@ -64,16 +70,34 @@ function page() {
               Challenge your friends to interview battles and see who performs better!
             </p>
             <Link href="/interview-groups/create">
-        <button className='bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transform transition duration-300 hover:scale-105 shadow-lg'>
-          Start Battle
-        </button>
-      </Link>
-
-
+              <button className='bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transform transition duration-300 hover:scale-105 shadow-lg'>
+                Start Battle
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-
+      
+      {/* Modal for All Interviews */}
+      {showInterviews && (
+        <div className='fixed inset-0 flex items-center justify-center z-50'>
+          <div 
+            className='absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm'
+            onClick={() => setShowInterviews(false)}
+          ></div>
+          <div className='relative bg-black bg-opacity-70 p-8 rounded-xl w-11/12 md:w-4/5 lg:w-3/4 max-h-[80vh] overflow-auto backdrop-filter backdrop-blur-md border border-gray-700 shadow-2xl'>
+            <button 
+              onClick={() => setShowInterviews(false)}
+              className='absolute top-4 right-4 text-gray-300 hover:text-white text-2xl'
+            >
+              ×
+            </button>
+            <h2 className='text-3xl font-bold text-white mb-6'>All Interviews</h2>
+            <AllInterviews />
+          </div>
+        </div>
+      )}
+      
       <Footer className='relative z-10'/>
     </div>
   );
